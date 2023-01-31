@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 
 const App = () => {
 	// save clicks of each button to its own state
@@ -19,12 +20,16 @@ const App = () => {
 		return (
 			<div>
 				<h1>statistics</h1>
-				<StatisticsLine text="good" value={good} />
-				<StatisticsLine text="neutral" value={neutral} />
-				<StatisticsLine text="bad" value={bad} />
-				<StatisticsLine text="all" value={all} />
-				<StatisticsLine text="average" value={average < 0 ? 0 : average} />
-				<StatisticsLine text="positive" value={positive} />
+				<table>
+					<tbody>
+						<StatisticsLine text="good" value={good} />
+						<StatisticsLine text="neutral" value={neutral} />
+						<StatisticsLine text="bad" value={bad} />
+						<StatisticsLine text="all" value={all} />
+						<StatisticsLine text="average" value={average < 0 ? 0 : average} />
+						<StatisticsLine text="positive" value={positive} />
+					</tbody>
+				</table>
 			</div>
 		);
 	};
@@ -32,10 +37,12 @@ const App = () => {
 	const StatisticsLine = ({ text, value }) => {
 		return (
 			<>
-				<span>
-					{text} {value} {text === "positive" ? "%" : null}
-				</span>
-				<br />
+				<tr>
+					<th>{text}</th>
+					<td>
+						{value} {text === "positive" ? "%" : null}
+					</td>
+				</tr>
 			</>
 		);
 	};
