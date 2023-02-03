@@ -1,0 +1,23 @@
+:root {
+	--notification-color-success: #007800;
+	--notification-color-error: #ff0000;
+	--notification-color-background: #d3d3d3;
+}
+
+.notification {
+	padding: 10px;
+	background-color: var(--notification-color-background);
+	margin-bottom: 10px;
+}
+
+.success {
+	color: var(--notification-color-success);
+	border: 5px solid var(--notification-color-success);
+	border-radius: 7.5px;
+}
+
+.error {
+	color: var(--notification-color-error);
+	border: 5px solid var(--notification-color-error);
+	border-radius: 7.5px;
+}
